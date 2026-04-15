@@ -12,6 +12,8 @@ export interface Project {
   highlight?: boolean;
 }
 
+
+
 export const projects: Project[] = [
   {
     id: 'simulacion-estadistica-pesaje',
@@ -92,5 +94,5 @@ export const projects: Project[] = [
       { value: 'Legal', label: 'Validación LCT' },
     ],
     highlight: false,
-  },,
+  }
 ];
