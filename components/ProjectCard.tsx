@@ -1,8 +1,9 @@
 'use client';
 
+import { useState, useEffect } from 'react'; // ← Asegúrate de importar useEffect
 import { motion } from 'framer-motion';
 import { Project } from './data/projects';
-import { Cpu, Wrench, Layers, Box } from 'lucide-react';
+import { Cpu, Wrench, Layers, Box, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
 const typeConfig = {
@@ -18,8 +19,41 @@ interface Props {
 }
 
 export default function ProjectCard({ project, index }: Props) {
+
+  if (!project) return null;
+  
   const cfg = typeConfig[project.type];
   const Icon = cfg.icon;
+
+  // Normalizar imágenes (array)
+  const imageList = project.images?.length
+    ? project.images
+    : project.image
+    ? [project.image]
+    : ['/placeholder.jpg'];
+
+  const [currentImage, setCurrentImage] = useState(0);
+  const hasCarousel = imageList.length > 1;
+
+  // ✅ AUTOPLAY: cambiar imagen cada 4 segundos
+  useEffect(() => {
+    if (!hasCarousel) return; // Solo si hay más de una imagen
+    
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % imageList.length);
+    }, 2000); // 2000 ms = 2 segundos
+    
+    return () => clearInterval(interval); // Limpiar intervalo al desmontar
+  }, [hasCarousel, imageList.length]); // Dependencias
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImage((prev) => (prev + 1) % imageList.length);
+  };
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImage((prev) => (prev - 1 + imageList.length) % imageList.length);
+  };
 
   return (
     <motion.article
@@ -32,26 +66,62 @@ export default function ProjectCard({ project, index }: Props) {
         project.highlight ? 'border-accent/30 shadow-lg shadow-accent/5' : ''
       }`}
     >
-      {/* Highlight accent bar */}
       {project.highlight && (
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent z-20" />
       )}
 
-      {/* Image Container */}
+      {/* Contenedor de imagen con carrusel */}
       <div className="relative w-full h-48 overflow-hidden bg-paper/5 border-b border-paper/10">
         <Image
-          src={project.image}
+          src={imageList[currentImage]}
           alt={project.title}
           fill
           className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105 opacity-80 group-hover:opacity-100"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
-        {/* Sutil gradiente para integrar la imagen con el fondo de la tarjeta */}
+        {/* Gradiente superior para integrar con la tarjeta */}
         <div className="absolute inset-0 bg-gradient-to-t from-paper/[0.03] to-transparent opacity-60" />
+
+        {/* Controles del carrusel (solo si hay más de una imagen) */}
+        {hasCarousel && (
+          <>
+            <button
+              onClick={prevImage}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1 rounded-full backdrop-blur-sm transition z-10"
+              aria-label="Imagen anterior"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1 rounded-full backdrop-blur-sm transition z-10"
+              aria-label="Imagen siguiente"
+            >
+              <ChevronRight size={18} />
+            </button>
+
+            {/* Indicadores (puntos) */}
+            <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5 z-10">
+              {imageList.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setCurrentImage(idx);
+                  }}
+                  className={`w-1.5 h-1.5 rounded-full transition-all ${
+                    idx === currentImage ? 'bg-accent w-3' : 'bg-white/50'
+                  }`}
+                  aria-label={`Ir a imagen ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </>
+        )}
       </div>
 
       <div className="p-6">
-        {/* Header */}
+        {/* Header: icono + año */}
         <div className="flex items-start justify-between mb-4">
           <div className={`p-2 rounded ${cfg.bg}`}>
             <Icon className={`w-4 h-4 ${cfg.color}`} />
@@ -59,11 +129,11 @@ export default function ProjectCard({ project, index }: Props) {
           <span className="text-faint text-xs font-mono">{project.year}</span>
         </div>
 
-        {/* Title */}
+        {/* Título y subtítulo */}
         <h3 className="font-serif text-lg text-paper mb-1 leading-tight">{project.title}</h3>
         <p className="text-accent text-xs mb-3 tracking-wide uppercase font-medium">{project.subtitle}</p>
 
-        {/* Description */}
+        {/* Descripción */}
         <p className="text-faint text-sm leading-relaxed mb-4 line-clamp-3">
           {project.description}
         </p>
@@ -81,13 +151,31 @@ export default function ProjectCard({ project, index }: Props) {
         )}
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((t) => (
             <span key={t} className="text-[10px] px-2 py-0.5 border border-paper/15 text-faint/80 rounded-sm bg-paper/5">
               {t}
             </span>
           ))}
         </div>
+
+        {/* Enlaces opcionales */}
+        {project.links && project.links.length > 0 && (
+          <div className="flex flex-wrap gap-3 pt-3 border-t border-paper/10">
+            {project.links.map((link, i) => (
+              <a
+                key={i}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs text-accent hover:text-paper transition-colors"
+              >
+                {link.label}
+                <ExternalLink size={12} />
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </motion.article>
   );

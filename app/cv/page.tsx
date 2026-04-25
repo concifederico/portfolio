@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import { Download, Users, Zap, Cpu, Box, TrendingUp } from 'lucide-react';
+import Image from 'next/image';
 
 const fadeUp = (delay = 0) => ({
   initial:   { opacity: 0, y: 20 },
@@ -46,9 +47,26 @@ export default function CVPage() {
             Descargar PDF
           </motion.a>
         </div>
+          <motion.div
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ delay: 0.2 }}
+    className="relative w-full max-w-2xl overflow-hidden rounded-xl group mt-8"
+  >
+    <Image
+  src="/images/foto.png"
+  alt="Federico Conci"
+  width={0}
+  height={0}
+  sizes="100vw"
+  className="w-52 h-52 rounded-lg transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105"
+/>
+  </motion.div>
       </section>
 
+
       <div className="px-8 md:px-20 py-16 max-w-5xl">
+
 
         {/* Perfil */}
         <motion.section {...fadeUp(0)} className="mb-16">
