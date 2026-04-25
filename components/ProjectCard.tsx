@@ -41,7 +41,7 @@ export default function ProjectCard({ project, index }: Props) {
     
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % imageList.length);
-    }, 2000); // 2000 ms = 2 segundos
+    }, 4000); // 4000 ms = 4 segundos
     
     return () => clearInterval(interval); // Limpiar intervalo al desmontar
   }, [hasCarousel, imageList.length]); // Dependencias

@@ -245,11 +245,7 @@ export const projects: Project[] = [
   tags: ['Diseño de Interiores', 'Relevamiento', 'Modelado 3D', 'Presupuesto', 'Optimización', 'Planificación'],
   type: 'industrial', // o 'prototipo' dependiendo del enfoque
   year: '2024',
-  image: '/images/projects/interior-design.jpg',
-  images: [
-    '/images/projects/interior-design-1.jpg',
-    '/images/projects/interior-design-2.jpg'
-  ],
+  image: '/images/projects/design.png',
   kpis: [
     { value: 'Precisión milimétrica', label: 'Relevamiento' },
     { value: 'Reducción de desperdicios', label: 'Optimización' },
@@ -259,7 +255,7 @@ export const projects: Project[] = [
   highlight: false,
 },{
   id: 'temporizador-viscoso-aeronautica',
-  title: 'Temporizador Viscoso de Ultra Bajo Peso para Aeronáutica',
+  title: 'Temporizador Viscoso de Ultra Bajo Peso',
   subtitle: 'Modelado 3D, Diseño Mecánico y Simulación de Fluido de Retardo',
   description:
     'Desarrollo completo de un temporizador viscoso de ultra bajo peso destinado a actividades experimentales en el ámbito aeronáutico. El proyecto incluyó el modelado 3D de conjuntos de piezas mecánicas, el diseño del circuito de fluido de retardo y la simulación de su dinámica de fluidos computacional (CFD). Se optimizó la geometría interna para lograr tiempos de retardo precisos bajo condiciones de vibración y aceleración propias del entorno aeroespacial, utilizando materiales ultraligeros sin comprometer la robustez mecánica.',
@@ -306,7 +302,11 @@ export const projects: Project[] = [
   tags: ['Pasímetro', 'Hélices', 'Aerodinámica', 'Impresión 3D', 'Mecánica de Precisión', 'Medición', 'Ingeniería Inversa'],
   type: 'prototipo',
   year: '2022',
-  image: '/images/projects/pasimetro.jpg',
+  image: '/images/projects/pasimetro1.jpg',
+    images: [
+    '/images/projects/pasimetro1.jpg',
+    '/images/projects/pasimetro2.jpg'
+  ],
   kpis: [
     { value: 'Alta precisión', label: 'Medición de Paso' },
     { value: 'Partes impresas 3D', label: 'Fabricación Ágil' },
