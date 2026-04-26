@@ -55,8 +55,8 @@ export const projects: Project[] = [
     description:
       'Desarrollo de un sistema prototipo de visión computarizada para la detección de anomalías...',
     tags: ['Python', 'OpenCV', 'Visión Artificial', 'Automatización'],
-    type: 'software',
-    year: '2023',
+    type: 'mejora',
+    year: '2017-Presente',
     image: '/images/projects/CBCV.GIF', // <-- Un .gif queda muy bien aquí
     kpis: [
       { value: 'Real-time', label: 'Procesamiento' },
@@ -138,7 +138,7 @@ export const projects: Project[] = [
     'Desarrollo de una interfaz inalámbrica Bluetooth para una balanza de precisión de laboratorio (resolución de miligramos). El sistema se implementó con un módulo HC-06 y un microcontrolador PIC 12F629, aprovechando al máximo sus escasos recursos. Se diseñó un convertidor de datos en tiempo real que transforma el formato nativo de 7 bits de la balanza a 8 bits y viceversa, permitiendo una transmisión bidireccional completa. La principal dificultad fue gestionar la conversión y el buffer de comunicación en un microcontrolador de bajo costo y memoria limitada, resolviéndose con optimización bit a bit y rutinas en ensamblador.',
   tags: ['Bluetooth', 'PIC', 'Embedded Systems', 'Protocolo Serial', 'Instrumentación', 'Low-Level'],
   type: 'prototipo',
-  year: '2014',
+  year: '2012',
   image: '/images/projects/scale.jpeg',
   kpis: [
     { value: '7→8 bits', label: 'Conversión Bidireccional' },
@@ -181,7 +181,7 @@ export const projects: Project[] = [
     'Desarrollo de un sistema de visión por computadora para el seguimiento automatizado de hormigas en ensayos de laboratorio, en colaboración con CONICET y la investigadora adjunta María Laura Peschiuta. El sistema se implementó en Python utilizando la librería Computer Vision 2 (CV2), permitiendo detectar y rastrear múltiples individuos en tiempo real. El objetivo es evaluar cuantitativamente el poder atrayente o repelente de distintas sustancias químicas sobre el comportamiento de las hormigas, generando trayectorias, mapas de calor y métricas de permanencia en zonas de interés.',
   tags: ['Computer Vision', 'Python', 'OpenCV', 'Tracking', 'Análisis de Comportamiento', 'CONICET'],
   type: 'software',
-  year: '2022',
+  year: '2024',
   image: '/images/projects/hormigas.gif',
   kpis: [
     { value: 'Python + CV2', label: 'Librerías' },
@@ -200,7 +200,7 @@ export const projects: Project[] = [
     'Desarrollo de una máquina CNC construida a partir de impresoras A3 recicladas, reutilizando componentes como conectores flexibles (cintas planas) y parte de la electrónica original. El sistema utiliza el stack tecnológico compuesto por Marlin como firmware de control, Inkscape para el diseño vectorial y Gcodetools para la generación de rutas de corte y grabado. Este enfoque permite reducir costos y fomentar la economía circular en el ámbito del prototipado y la fabricación digital.',
   tags: ['CNC', 'Reciclaje', 'Impresoras A3', 'Marlin', 'Inkscape', 'Gcodetools', 'Electrónica', 'Economía Circular'],
   type: 'prototipo',
-  year: '2023',
+  year: '2020',
   image: '/images/projects/cnc1.gif',
   images: [
     '/images/projects/cnc1.gif',
@@ -223,7 +223,7 @@ export const projects: Project[] = [
     'Desarrollo de una cámara para la medición de reflectancia mediante la implementación práctica de un barrido espectral con un espectrómetro visible Ocean Optics 2000. Se diseñó y generó por precipitación un estándar de bicarbonato de bario de alta reflectancia, asegurando valores de reflectancia máximos para la calibración del sistema. Este dispositivo fue utilizado por el CONICET y la investigadora María Laura Peschiuta en diversas investigaciones en el campo de la ecofisiología vegetal, permitiendo la caracterización óptica de tejidos vegetales y el monitoreo de parámetros fisiológicos.',
   tags: ['Espectroscopía', 'Reflectancia', 'Ocean Optics', 'Instrumentación', 'Ecofisiología Vegetal', 'CONICET', 'Calibración Óptica'],
   type: 'prototipo',
-  year: '2023',
+  year: '2010',
   image: '/images/projects/camara1.png',
   images: [
     '/images/projects/camera1.png',
@@ -244,7 +244,7 @@ export const projects: Project[] = [
     'Desarrollo de proyectos integrales de diseño de interiores que abarcan desde el relevamiento preciso de espacios existentes hasta el modelado 3D detallado, la elaboración de presupuestos de materiales y la optimización de recursos. Se implementan metodologías para maximizar la eficiencia en el uso de materiales, reducir desperdicios y ajustar los diseños a las necesidades funcionales y estéticas del cliente. El proceso incluye escaneo o medición manual, modelado paramétrico y simulación de iluminación y texturas para la toma de decisiones informadas.',
   tags: ['Diseño de Interiores', 'Relevamiento', 'Modelado 3D', 'Presupuesto', 'Optimización', 'Planificación'],
   type: 'industrial', // o 'prototipo' dependiendo del enfoque
-  year: '2024',
+  year: '2025',
   image: '/images/projects/design.png',
   kpis: [
     { value: 'Precisión milimétrica', label: 'Relevamiento' },
@@ -261,7 +261,7 @@ export const projects: Project[] = [
     'Desarrollo completo de un temporizador viscoso de ultra bajo peso destinado a actividades experimentales en el ámbito aeronáutico. El proyecto incluyó el modelado 3D de conjuntos de piezas mecánicas, el diseño del circuito de fluido de retardo y la simulación de su dinámica de fluidos computacional (CFD). Se optimizó la geometría interna para lograr tiempos de retardo precisos bajo condiciones de vibración y aceleración propias del entorno aeroespacial, utilizando materiales ultraligeros sin comprometer la robustez mecánica.',
   tags: ['Modelado 3D', 'CFD', 'Dinámica de Fluidos', 'Temporizador Mecánico', 'Aeronáutica', 'Diseño Mecánico', 'Ultraligero'],
   type: 'prototipo',
-  year: '2023',
+  year: '2021',
   image: '/images/projects/rtd1.png',
   kpis: [
     { value: 'Ultra bajo peso', label: 'Optimización Masiva' },
@@ -287,10 +287,10 @@ export const projects: Project[] = [
   kpis: [
     { value: '>16.000 tn/año', label: 'Capacidad de Planta' },
     { value: 'VAN + TIR', label: 'Rentabilidad Asegurada' },
-    { value: 'Cero efluentes', label: 'Diseño Ambiental' }
+    { value: 'Cero efluentes', label: 'RSE' }
   ],
   links: [
-    { label: 'Ver documento PDF (UTN)', url: 'https://www.edutecne.utn.edu.ar/PPI-CAI/ppi2006.pdf' }
+    { label: 'Ver documento PDF', url: 'https://www.edutecne.utn.edu.ar/PPI-CAI/ppi2006.pdf' }
   ],
   highlight: true,
 },{
@@ -308,7 +308,7 @@ export const projects: Project[] = [
     '/images/projects/pasimetro2.jpg'
   ],
   kpis: [
-    { value: 'Alta precisión', label: 'Medición de Paso' },
+    { value: '1º', label: 'Medición de Paso' },
     { value: 'Partes impresas 3D', label: 'Fabricación Ágil' },
     { value: 'Estructura Aluminio', label: 'Rigidez Mecánica' }
   ],
