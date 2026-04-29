@@ -1,10 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react'; // ← Asegúrate de importar useEffect
+import { useEffect, useState } from 'react';
+import { track } from '@vercel/analytics';
 import { motion } from 'framer-motion';
 import { Project } from './data/projects';
 import { Cpu, Wrench, Layers, Box, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const typeConfig = {
   industrial: { icon: Wrench,  color: 'text-amber-500',  bg: 'bg-amber-500/10' },
@@ -19,6 +21,7 @@ interface Props {
 }
 
 export default function ProjectCard({ project, index }: Props) {
+  const t = useTranslations('projectCard');
 
   if (!project) return null;
   
@@ -33,7 +36,9 @@ export default function ProjectCard({ project, index }: Props) {
     : ['/placeholder.jpg'];
 
   const [currentImage, setCurrentImage] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
   const hasCarousel = imageList.length > 1;
+  const canExpand = (project.description?.length ?? 0) > 180;
 
   // ✅ AUTOPLAY: cambiar imagen cada 4 segundos
   useEffect(() => {
@@ -55,8 +60,26 @@ export default function ProjectCard({ project, index }: Props) {
     setCurrentImage((prev) => (prev - 1 + imageList.length) % imageList.length);
   };
 
+  const handleExpandToggle = () => {
+    setIsExpanded((prev) => {
+      const next = !prev;
+
+      if (next) {
+        track('Project Interest', {
+          action: 'expand_card',
+          projectId: project.id,
+          projectTitle: project.title ?? project.id,
+          projectType: project.type,
+        });
+      }
+
+      return next;
+    });
+  };
+
   return (
     <motion.article
+      layout
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
@@ -134,9 +157,20 @@ export default function ProjectCard({ project, index }: Props) {
         <p className="text-accent text-xs mb-3 tracking-wide uppercase font-medium">{project.subtitle || ''}</p>
 
         {/* Descripción */}
-        <p className="text-faint text-sm leading-relaxed mb-4 line-clamp-3">
+        <p className={`text-faint text-sm leading-relaxed ${canExpand ? 'mb-2' : 'mb-4'} ${isExpanded ? '' : 'line-clamp-3'}`}>
           {project.description || ''}
         </p>
+
+        {canExpand && (
+          <button
+            type="button"
+            onClick={handleExpandToggle}
+            aria-expanded={isExpanded}
+            className="mb-4 inline-flex items-center gap-1 text-xs font-medium tracking-wide text-accent hover:text-paper transition-colors"
+          >
+            {isExpanded ? t('showLess') : t('showMore')}
+          </button>
+        )}
 
         {/* KPIs */}
         {project.kpis && (

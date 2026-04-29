@@ -32,6 +32,10 @@
     "title": "What I built<br /> with genuine passion for industry and engineering.",
     "viewAll": "View all"
   },
+  "projectCard": {
+    "showMore": "Show more",
+    "showLess": "Show less"
+  },
   "about": {
     "tag": "About me",
     "title": "Technician, manager<br />and builder of solutions.",

@@ -32,6 +32,10 @@
     "title": "Lo que construí<br /> con pasión genuina por la industria y la ingeniería.",
     "viewAll": "Ver todos"
   },
+  "projectCard": {
+    "showMore": "Ver más",
+    "showLess": "Ver menos"
+  },
   "about": {
     "tag": "Sobre mí",
     "title": "Técnico, gestor<br />y constructor de soluciones.",
@@ -598,7 +602,7 @@
       ],
       "kpis": [
         {
-          "value": "+0.01°",
+          "value": "+1.0°",
           "label": "Precisión Angular"
         },
         {

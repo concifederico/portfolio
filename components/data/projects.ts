@@ -259,7 +259,7 @@ export const projectIds: Project[] = [
       '/images/projects/pasimetro2.jpg'
     ],
     kpis: [
-      { value: '+0.01°', label: 'Precisión Angular' },
+      { value: '+1.0°', label: 'Precisión Angular' },
       { value: 'Paso Geométrico', label: 'Medición Exacta' },
       { value: 'Drones/Aeromodelismo', label: 'Aplicaciones' }
     ],
