@@ -35,7 +35,7 @@ export default function CVPage() {
   const t = useTranslations('cv');
   const messages = useMessages() as CvMessages;
   const profile = messages.cv?.profile ?? {};
-  const cvFile = locale === 'en' ? '/Federico Conci_en.pdf' : '/Federico Conci.pdf';
+  const cvFile = locale === 'en' ? '/Federico_Conci_en.pdf' : '/Federico_Conci.pdf';
 
   return (
     <main className="min-h-screen bg-[#111] text-paper">

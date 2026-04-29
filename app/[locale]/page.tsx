@@ -81,7 +81,7 @@ export default function HomePage() {
   const hero = messages.hero ?? {};
   const projects = messages.projects ?? {};
   const about = messages.about ?? {};
-  const cvFile = locale === 'en' ? '/Federico Conci_en.pdf' : '/Federico Conci.pdf';
+  const cvFile = locale === 'en' ? '/Federico_Conci_en.pdf' : '/Federico_Conci.pdf';
   const localizedProjects = useMemo(
     () => mergeProjectTranslations(messages.projectsData),
     [messages]

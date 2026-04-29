@@ -4,5 +4,5 @@ import { routing } from './i18n/routing'; // ← Importa desde routing.ts
 export default createMiddleware(routing);
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|images).*)']
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };
