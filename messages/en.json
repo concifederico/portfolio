@@ -1,0 +1,615 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "cv": "CV",
+    "download": "Download CV",
+    "spanish": "Español",
+    "english": "English",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tag": "Professional Portfolio",
+    "title": "Applied engineering that <br /> <span class=\"text-accent italic\">transforms</span> processes.",
+    "description": "Head of Mechanical Maintenance Packaging Sector at <strong class=\"text-paper/80\">Bagley Argentina · Arcor Group</strong>. 16 people, high-speed machinery, automation and development. Always oriented towards <strong class=\"text-accent\">applied engineering to solve problems</strong>.",
+    "viewProjects": "View projects",
+    "viewCV": "CV",
+    "downloadCV": "Download CV",
+    "scroll": "scroll"
+  },
+  "kpi": {
+    "people": "People led",
+    "upgrades": "End-of-line upgrades",
+    "experience": "Years of experience",
+    "projects": "Complex projects",
+    "mounted": "Mounted equipment",
+    "conicet": "CONICET collaborations",
+    "cncBuilt": "CNC machines built",
+    "awards": "Awards and Distinctions"
+  },
+  "projects": {
+    "tag": "Featured Projects",
+    "title": "What I built<br /> with genuine passion for industry and engineering.",
+    "viewAll": "View all"
+  },
+  "about": {
+    "tag": "About me",
+    "title": "Technician, manager<br />and builder of solutions.",
+    "description1": "I work at the intersection of precision mechanics, automation and software development. I lead the maintenance of high-speed packaging lines while designing 3D parts, writing algorithms to be implemented in microcontrollers and learning Next.js in my free time.",
+    "description2": "My goal: bring that comprehensive vision to the <strong class=\"text-paper/80\">development team of new methods and technologies</strong> at Bagley, where each improvement impacts millions of packages that reach the shelves of Argentina."
+  },
+  "skills": {
+    "maintenance": "Maintenance Engineering & Reliability",
+    "maintenanceLevel": "Expert",
+    "maintenanceDetail": "Complete cycle in high-speed machinery and central workshop.",
+    "projects": "Project Management & Teams",
+    "projectsLevel": "Senior",
+    "projectsDetail": "Leadership of 16+ people and end-of-line upgrade operations (GTP).",
+    "automation": "Automation & Industrial Control",
+    "automationLevel": "Advanced",
+    "automationDetail": "Microcontroller algorithms and computer vision with OpenCV.",
+    "prototyping": "Rapid Prototyping & Additive Manufacturing",
+    "prototypingLevel": "Advanced",
+    "prototypingDetail": "Validation of functional improvements through FDM 3D printing.",
+    "web": "Digital Ecosystems (Next.js / Web)",
+    "webLevel": "Project Focus",
+    "webDetail": "Development of interfaces for technical data management and visualization."
+  },
+  "footer": {
+    "location": "Córdoba, Argentina",
+    "cv": "CV",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "subtitle": "Chem. Eng. · Head of Maintenance Sector · Bagley Argentina",
+    "downloadPDF": "Download PDF",
+    "profile": {
+      "tag": "Profile",
+      "description": "Chemical Engineer specialized in Quality with comprehensive experience in high-speed industrial maintenance and process improvement in food plants. Currently in charge of the packaging mechanical sector and central workshop for machining and welding at <strong class=\"text-paper\">Bagley Argentina (Arcor Group)</strong>. I combine team management with agile methodologies, 3D prototyping and process automation. With the conviction of executing concrete improvements based on <strong class=\"text-accent\">applied engineering to technical and management processes</strong>."
+    },
+    "kpi": {
+      "team": "People in charge",
+      "upgrades": "End-of-line upgrades",
+      "prototyping": "Agile prototyping",
+      "web": "Programmer"
+    },
+    "experience": {
+      "tag": "Professional Experience",
+      "currentJob": {
+        "title": "Sector Head – Packaging Mechanical Maintenance & Central Workshop",
+        "date": "Apr 2022 – Present",
+        "company": "Bagley Argentina S.A. – Arcor Group · Cookie Plant, Córdoba",
+        "responsibilities": [
+          "Leadership of 16 people: mechanics, turners and welders, with full maintenance cycle management (preventive, predictive and corrective).",
+          "Responsible for the central workshop specialized in machining and welding, ensuring availability of high-speed machinery.",
+          "Leadership of 3 complete end-of-line equipment upgrade operations, from technical specification to commissioning and startup (GTP).",
+          "Participation in the Plant Improvement Pillar with direct involvement in focused improvement groups (GME).",
+          "Implementation of agile methodologies with 3D printers and rapid prototyping applied to maintenance.",
+          "Multidisciplinary management of electronic maintenance and development of microcontroller algorithms for packaging line automation."
+        ]
+      },
+      "previousJob1": {
+        "title": "Production Sector Head / Process Engineer",
+        "date": "Jul 2015 – Apr 2022",
+        "company": "Bagley Argentina S.A. – Arcor Group",
+        "responsibilities": [
+          "Operational management of 5 high-speed production lines with a team of more than 100 collaborators.",
+          "Leadership in Early Project Management (GTP) for the assembly of new lines and optimization of thermal processes.",
+          "Implementation of Quality and Food Safety standards under the Integrated Management System (IMS).",
+          "Waste analysis and OEE optimization through standardization of manufacturing processes."
+        ]
+      },
+      "previousJob2": {
+        "title": "Senior Field Engineer",
+        "date": "May 2007 – Jul 2015",
+        "company": "Halliburton & Schlumberger Argentina",
+        "responsibilities": [
+          "Technical support and sales of specialized services for oil and gas wells (Vaca Muerta and conventional basins).",
+          "Technical feasibility studies for the application of new technologies under critical operating conditions.",
+          "Management of internal audits under ISO standards and IMS quality processes.",
+          "Coordination of logistics and field resources for high technical complexity operations."
+        ]
+      }
+    },
+    "skills": {
+      "tag": "Competencies",
+      "groups": [
+        {
+          "title": "Development Engineering & Innovation",
+          "tags": [
+            "Early Project Management (GTP)",
+            "Rapid Prototyping (3D Printing)",
+            "Parametric CAD Design",
+            "Agile Methodologies",
+            "Focused Improvement Pillar (GME)",
+            "Lean Manufacturing",
+            "Process Simulation"
+          ]
+        },
+        {
+          "title": "Technology & Automation",
+          "tags": [
+            "Control Algorithms",
+            "Computer Vision (OpenCV)",
+            "PIC/Assembler (Programming)",
+            "Packaging Electronics",
+            "Industrial Instrumentation",
+            "Electronic Maintenance",
+            "Artificial Vision Systems"
+          ]
+        },
+        {
+          "title": "Fullstack & Software Engineering",
+          "tags": [
+            "Next.js / React",
+            "TypeScript / JavaScript",
+            "Python (Automation)",
+            "Node.js",
+            "Tailwind CSS",
+            "Git / GitHub",
+            "Management Software (CMMS)",
+            "API Integration"
+          ]
+        },
+        {
+          "title": "Industrial Management & Quality",
+          "tags": [
+            "Team Leadership (16+ people)",
+            "High-Speed Machinery",
+            "End-of-Line Upgrades",
+            "Quality Standards (IMS)",
+            "Food Safety (GMP)",
+            "OEM Supplier Management",
+            "Root Cause Analysis (RCA)"
+          ]
+        }
+      ]
+    },
+    "education": {
+      "tag": "Education",
+      "items": [
+        {
+          "title": "Specialization in Quality Engineering",
+          "institution": "Universidad Tecnológica Nacional (UTN - FRC)",
+          "date": "2015–2016"
+        },
+        {
+          "title": "Chemical Engineer",
+          "institution": "Universidad Nacional de Córdoba (FCEFYN)",
+          "date": "2002–2007",
+          "extra": "GPA: 8.97 | Distinguished Graduate UNC | Laboratory Instructor"
+        },
+        {
+          "title": "Web Development & Software Training",
+          "institution": "Argentina Programa (#SeProgramar) · Self-taught",
+          "date": "2021–Present",
+          "extra": "Next.js · React · Vercel · Python · OpenCV"
+        }
+      ]
+    },
+    "cta": {
+      "download": "Download CV as PDF",
+      "email": "Contact by email"
+    }
+  },
+  "proyectos": {
+    "tag": "Projects",
+    "title": "Every development has<br /><span class=\"text-accent italic\">a story</span>.",
+    "description": "Industrial projects, automation, prototypes and developments carried out.",
+    "filters": {
+      "all": "All",
+      "industrial": "Industrial",
+      "software": "Software",
+      "mejora": "Continuous Improvement",
+      "prototipo": "Prototyping"
+    }
+  },
+  "projectsData": {
+    "simulacion-estadistica-pesaje": {
+      "title": "Statistical Simulation: Multi-head Weighing",
+      "subtitle": "Weight Distribution Optimization in R",
+      "description": "Development of a stochastic model in R language to simulate the behavior of multi-head scales. The algorithm allowed predicting optimal load combinations and reducing final weight variability, minimizing product giveaway and ensuring compliance with net weight regulations.",
+      "tags": [
+        "R Language",
+        "Applied Statistics",
+        "Data Science",
+        "Optimization"
+      ],
+      "kpis": [
+        {
+          "value": "Sigma",
+          "label": "Variability Reduction"
+        },
+        {
+          "value": "R",
+          "label": "Computational Analysis"
+        }
+      ]
+    },
+    "prototipado-agile-3d": {
+      "title": "Rapid Prototyping and Agile Methodologies",
+      "subtitle": "Additive Manufacturing applied to Focused Improvement",
+      "description": "Implementation of a 3D printing ecosystem (FDM) for the creation of critical spare parts, lead time reduction, and validation of functional improvements. Integration with Focused Improvement Groups (GME) and autonomous maintenance.",
+      "tags": [
+        "3D Printing",
+        "Agile",
+        "Prototyping",
+        "SolidWorks/FreeCAD"
+      ],
+      "kpis": [
+        {
+          "value": "-70%",
+          "label": "Part Lead Time"
+        },
+        {
+          "value": "FDM",
+          "label": "Technology"
+        }
+      ]
+    },
+    "vision-artificial-calidad": {
+      "title": "Computer Vision for Quality Control",
+      "subtitle": "Automation with Python and OpenCV",
+      "description": "Development of a prototype computer vision system for detecting anomalies in products on the production line. Implementation of real-time segmentation and classification algorithms, with integration capability into SCADA systems.",
+      "tags": [
+        "Python",
+        "OpenCV",
+        "Computer Vision",
+        "Automation"
+      ],
+      "kpis": [
+        {
+          "value": "Real-time",
+          "label": "Processing"
+        },
+        {
+          "value": "IoT",
+          "label": "Connectivity"
+        }
+      ]
+    },
+    "montaje-infraestructura-industrial": {
+      "title": "Productive Infrastructure Assembly",
+      "subtitle": "Assembly Management and Asset Coordination",
+      "description": "Technical leadership in the assembly and installation of 3 complete end-of-line systems and more than 30 peripheral equipment. Comprehensive coordination of multidisciplinary teams, including plant personnel and external contractors, ensuring compliance with critical construction schedules, safety regulations, and process engineering standards.",
+      "tags": [
+        "Industrial Assembly",
+        "Project Management",
+        "Contractor Coordination",
+        "Commissioning"
+      ],
+      "kpis": [
+        {
+          "value": "3",
+          "label": "Complete Lines"
+        },
+        {
+          "value": "+30",
+          "label": "Installed Assets"
+        }
+      ]
+    },
+    "simulacion-cfd-mezclado": {
+      "title": "CFD Simulation for Industrial Mixing",
+      "subtitle": "Equipment Capacity Analysis for New Technology",
+      "description": "A Computational Fluid Dynamics (CFD) simulation is performed to determine if the capacity of mixing equipment is sufficient to implement a new technology in Argentina. The study evaluates flow patterns, mixing times, and dead zones, allowing technical feasibility validation before equipment investment.",
+      "tags": [
+        "CFD",
+        "Fluid Dynamics",
+        "Simulation",
+        "Technology Validation"
+      ],
+      "kpis": [
+        {
+          "value": "Feasibility",
+          "label": "Validated Technology"
+        },
+        {
+          "value": "CFD",
+          "label": "Predictive Analysis"
+        }
+      ]
+    },
+    "optimizador-vacaciones-restricciones": {
+      "title": "Vacation Optimization System",
+      "subtitle": "Permutation Algorithm with Critical Constraints",
+      "description": "Development of a logical tool for automated annual leave assignment. The system uses optimized permutation algorithms to evaluate millions of possible combinations, ensuring compliance with the Labor Contract Law (LCT) and guaranteeing that operational levels and minimum technical headcount are never compromised.",
+      "tags": [
+        "Algorithms",
+        "Programming Logic",
+        "Operational Management",
+        "Compliance"
+      ],
+      "kpis": [
+        {
+          "value": "100%",
+          "label": "Guaranteed Operations"
+        },
+        {
+          "value": "Legal",
+          "label": "Labor Law Compliance"
+        }
+      ]
+    },
+    "cnc-etching-scanner-printer": {
+      "title": "Plate Etching CNC with Recycled Hardware",
+      "subtitle": "Repurposing AGFA Scanner and Olivetti JP192 Printer",
+      "description": "CNC machine for etching built entirely from recycled components: an old AGFA scanner and an Olivetti JP192 printer. The system takes advantage of the linear motion mechanisms of the scanner and printer to achieve a functional coordinate axis. The resolution achieved is approximately 0.2 mm, allowing precision engraving on different materials. An open-source electronics, mechanics, and firmware project.",
+      "tags": [
+        "CNC",
+        "Recycled Hardware",
+        "Electronics",
+        "Firmware",
+        "Engraving",
+        "DIY"
+      ],
+      "kpis": [
+        {
+          "value": "0.2 mm",
+          "label": "Resolution"
+        },
+        {
+          "value": "Recycled",
+          "label": "AGFA + Olivetti"
+        },
+        {
+          "value": "DIY",
+          "label": "Open Source"
+        }
+      ]
+    },
+    "bluetooth-balanza-precision-pic": {
+      "title": "Bluetooth Interface for Precision Balance",
+      "subtitle": "Bidirectional Adapter with PIC 12F629 and HC-06",
+      "description": "Development of a wireless Bluetooth interface for a laboratory precision balance (milligram resolution). The system was implemented with an HC-06 module and a PIC 12F629 microcontroller, making the most of its scarce resources. A real-time data converter was designed that transforms the native 7-bit format of the balance to 8 bits and vice versa, allowing full bidirectional transmission. The main challenge was managing conversion and communication buffer on a low-cost, limited-memory microcontroller, solved with bit-by-bit optimization and assembler routines.",
+      "tags": [
+        "Bluetooth",
+        "PIC",
+        "Embedded Systems",
+        "Serial Protocol",
+        "Instrumentation",
+        "Low-Level"
+      ],
+      "kpis": [
+        {
+          "value": "7→8 bits",
+          "label": "Bidirectional Conversion"
+        },
+        {
+          "value": "PIC 12F629",
+          "label": "1KB Flash, 64B RAM"
+        },
+        {
+          "value": "HC-06",
+          "label": "Bluetooth SPP"
+        }
+      ]
+    },
+    "calibre-digital-bluetooth-pic": {
+      "title": "Bluetooth Interface for Digital Caliper",
+      "subtitle": "Wireless Adapter with PIC12F629 and HC-05/HC-06 Module",
+      "description": "Development of a plug-in interface to transmit data from a Chinese digital caliper via Bluetooth to a PC or mobile device in real time. The project required reverse engineering the caliper's communication, porting the algorithm to a PIC12F629 microcontroller. It includes the design of a thin PCB and an innovative flexible circuit connector (flex) handcrafted from 0.05mm brass sheets, to attach to the caliper without invasive soldering. The firmware allows selecting between transmission modes (on value change, by button, by serial command, or continuous) and the type of data sent (mm, inches, raw data, or HEX).",
+      "tags": [
+        "PIC",
+        "Bluetooth",
+        "Embedded",
+        "PCB Design",
+        "Reverse Engineering",
+        "C++",
+        "Hardware"
+      ],
+      "kpis": [
+        {
+          "value": "9600-8-N-1",
+          "label": "Serial Transmission"
+        },
+        {
+          "value": "PIC12F629",
+          "label": "Central MCU"
+        },
+        {
+          "value": "1.8V-3.3V",
+          "label": "Flexible Power"
+        }
+      ]
+    },
+    "vision-computada-seguimiento-hormigas": {
+      "title": "Computer Vision System for Ant Tracking",
+      "subtitle": "Evaluation of Attractant and Repellent Substances (CONICET)",
+      "description": "Development of a computer vision system for automated tracking of ants in laboratory tests, in collaboration with CONICET and associate researcher María Laura Peschiuta. The system was implemented in Python using the Computer Vision 2 (CV2) library, allowing detection and tracking of multiple individuals in real time. The objective is to quantitatively evaluate the attractant or repellent power of different chemical substances on ant behavior, generating trajectories, heat maps, and permanence metrics in areas of interest.",
+      "tags": [
+        "Computer Vision",
+        "Python",
+        "OpenCV",
+        "Tracking",
+        "Behavior Analysis",
+        "CONICET"
+      ],
+      "kpis": [
+        {
+          "value": "Python + CV2",
+          "label": "Libraries"
+        },
+        {
+          "value": "Multi-individual",
+          "label": "Real-time Tracking"
+        },
+        {
+          "value": "CONICET",
+          "label": "Scientific Collaboration"
+        }
+      ]
+    },
+    "cnc-reciclado-impresoras-a3": {
+      "title": "CNC System with Recycled A3 Printers",
+      "subtitle": "Use of Flexible Connectors and Recovered Electronics",
+      "description": "Development of a CNC machine built from recycled A3 printers, reusing components such as flexible connectors (flat cables) and part of the original electronics. The system uses a technology stack composed of Marlin as control firmware, Inkscape for vector design, and Gcodetools for generating cutting and engraving paths. This approach reduces costs and promotes the circular economy in the field of prototyping and digital manufacturing.",
+      "tags": [
+        "CNC",
+        "Recycling",
+        "A3 Printers",
+        "Marlin",
+        "Inkscape",
+        "Gcodetools",
+        "Electronics",
+        "Circular Economy"
+      ],
+      "kpis": [
+        {
+          "value": "Marlin",
+          "label": "Firmware"
+        },
+        {
+          "value": "Inkscape + Gcodetools",
+          "label": "CAD/CAM"
+        },
+        {
+          "value": "Recycling",
+          "label": "Electronics and Mechanics"
+        }
+      ]
+    },
+    "camara-reflectancia-espectrometro-ocean-optics": {
+      "title": "Reflectance Camera with Ocean Optics 2000 Spectrometer",
+      "subtitle": "Measurement System for Plant Ecophysiology (CONICET)",
+      "description": "Development of a camera for reflectance measurement through the practical implementation of a spectral scan with a visible Ocean Optics 2000 spectrometer. A high-reflectance barium bicarbonate standard was designed and generated by precipitation, ensuring maximum reflectance values for system calibration. This device was used by CONICET and researcher María Laura Peschiuta in various investigations in the field of plant ecophysiology, allowing optical characterization of plant tissues and monitoring of physiological parameters.",
+      "tags": [
+        "Spectroscopy",
+        "Reflectance",
+        "Ocean Optics",
+        "Instrumentation",
+        "Plant Ecophysiology",
+        "CONICET",
+        "Optical Calibration"
+      ],
+      "kpis": [
+        {
+          "value": "Ocean Optics 2000",
+          "label": "Visible Spectrometer"
+        },
+        {
+          "value": "Ba(HCO₃)₂",
+          "label": "High Reflectance Standard"
+        },
+        {
+          "value": "CONICET",
+          "label": "Scientific Validation"
+        }
+      ]
+    },
+    "diseno-interiores-relevamiento-3d": {
+      "title": "Interior Design: Survey, 3D Modeling and Optimization",
+      "subtitle": "Comprehensive Space and Material Planning",
+      "description": "Development of comprehensive interior design projects ranging from precise surveying of existing spaces to detailed 3D modeling, material budgeting, and resource optimization. Methodologies are implemented to maximize material efficiency, reduce waste, and tailor designs to the client's functional and aesthetic needs. The process includes scanning or manual measurement, parametric modeling, and lighting and texture simulation for informed decision making.",
+      "tags": [
+        "Interior Design",
+        "Surveying",
+        "3D Modeling",
+        "Budgeting",
+        "Optimization",
+        "Planning"
+      ],
+      "kpis": [
+        {
+          "value": "Millimetric accuracy",
+          "label": "Surveying"
+        },
+        {
+          "value": "Waste reduction",
+          "label": "Optimization"
+        },
+        {
+          "value": "3D + Render",
+          "label": "Visualization"
+        }
+      ]
+    },
+    "temporizador-viscoso-aeronautica": {
+      "title": "Ultra-Lightweight Viscous Timer",
+      "subtitle": "3D Modeling, Mechanical Design and Retarding Fluid Simulation",
+      "description": "Complete development of an ultra-lightweight viscous timer intended for experimental activities in the aeronautical field. The project included 3D modeling of mechanical parts assemblies, design of the retarding fluid circuit, and Computational Fluid Dynamics (CFD) simulation. Internal geometry was optimized to achieve precise delay times under vibration and acceleration conditions typical of aerospace environments, using ultra-light materials without compromising mechanical robustness.",
+      "tags": [
+        "3D Modeling",
+        "CFD",
+        "Fluid Dynamics",
+        "Mechanical Timer",
+        "Aeronautics",
+        "Mechanical Design",
+        "Ultra-lightweight"
+      ],
+      "kpis": [
+        {
+          "value": "Ultra-low weight",
+          "label": "Mass Optimization"
+        },
+        {
+          "value": "CFD",
+          "label": "Fluid Simulation"
+        },
+        {
+          "value": "Aeronautics",
+          "label": "Experimental Validation"
+        }
+      ]
+    },
+    "estudio-prefactibilidad-silicato-sodio": {
+      "title": "Pre-feasibility Study: Sodium Silicate Plant",
+      "subtitle": "Joint Production of Sodium Silicate and Derivatives",
+      "description": "Comprehensive pre-feasibility study for the installation of a sodium silicate and its main derivatives (precipitated silica, colloidal silica, and silica gel) manufacturing plant in Argentina. The project included national and international market studies, analysis of raw material availability, selection of production technologies with energy efficiency and environmental compatibility criteria, mass and energy balance, equipment sizing, plant layout with over 16,000 tons per year capacity, zero liquid emissions effluent treatment, organizational structure, analysis of investment and operating costs, and economic-financial evaluation (NPV, IRR, break-even point). The work was developed at the Chair of Organization and Industrial Project of the National University of Córdoba (UNC).",
+      "tags": [
+        "Feasibility Study",
+        "Project Engineering",
+        "Chemical Processes",
+        "Sodium Silicate",
+        "Plant Design",
+        "Economic Evaluation",
+        "Mass and Energy Balance",
+        "Wastewater Treatment"
+      ],
+      "kpis": [
+        {
+          "value": ">16,000 t/year",
+          "label": "Plant Capacity"
+        },
+        {
+          "value": "NPV + IRR",
+          "label": "Profitability"
+        },
+        {
+          "value": "Zero effluents",
+          "label": "CSR"
+        }
+      ]
+    },
+    "pasimetro-alta-precision-helices": {
+      "title": "High Precision Pitch Meter for Aerodynamic Characterization",
+      "subtitle": "3D Design and Printing with Aluminum Structure",
+      "description": "Development and construction of a high-precision pitch meter (propeller pitch test bench) for aerodynamic characterization of scale propellers. The device combines 3D printed parts for complex components and an aluminum structural frame to ensure rigidity and dimensional stability. It allows accurate measurement of geometric and aerodynamic pitch of propellers of different diameters and configurations, facilitating validation of experimental designs for applications in aeromodelling, drones, and unmanned aerial vehicles. The system includes angle and linear displacement sensors, data acquisition interface, and processing software for pitch curves per radial station.",
+      "tags": [
+        "Pitch Meter",
+        "Propellers",
+        "Aerodynamics",
+        "3D Printing",
+        "Precision Mechanics",
+        "Measurement",
+        "Reverse Engineering"
+      ],
+      "kpis": [
+        {
+          "value": "+1.0°",
+          "label": "Angular Precision"
+        },
+        {
+          "value": "Geometric Pitch",
+          "label": "Precise Measurement"
+        },
+        {
+          "value": "Drones/Aeromodelling",
+          "label": "Applications"
+        }
+      ]
+    }
+  }
+}

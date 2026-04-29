@@ -1,12 +1,17 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, ChevronDown } from 'lucide-react';
+import { useLocale, useMessages, useTranslations } from 'next-intl';
 import Navbar from '@/components/Navbar';
 import ProjectCard from '@/components/ProjectCard';
-import { projects } from '@/components/data/projects';
+import { Link } from '@/i18n/routing';
+import {
+  getFeaturedProjects,
+  LocalizedProjectData,
+  mergeProjectTranslations,
+} from '@/components/data/projects';
 
 // ── Stagger helpers ───────────────────────────────────────────────
 const containerVariants = {
@@ -43,7 +48,49 @@ function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
   return <span ref={ref}>{val}{suffix}</span>;
 }
 
+type HomeMessages = {
+  hero?: {
+    tag?: string;
+    title?: string;
+    description?: string;
+    viewProjects?: string;
+    viewCV?: string;
+    downloadCV?: string;
+    scroll?: string;
+  };
+  projects?: {
+    tag?: string;
+    title?: string;
+    viewAll?: string;
+  };
+  about?: {
+    tag?: string;
+    title?: string;
+    description1?: string;
+    description2?: string;
+  };
+  projectsData?: Record<string, LocalizedProjectData>;
+};
+
 export default function HomePage() {
+  const locale = useLocale();
+  const tKpi = useTranslations('kpi');
+  const tSkills = useTranslations('skills');
+  const tFooter = useTranslations('footer');
+  const messages = useMessages() as HomeMessages;
+  const hero = messages.hero ?? {};
+  const projects = messages.projects ?? {};
+  const about = messages.about ?? {};
+  const cvFile = locale === 'en' ? '/Federico Conci_en.pdf' : '/Federico Conci.pdf';
+  const localizedProjects = useMemo(
+    () => mergeProjectTranslations(messages.projectsData),
+    [messages]
+  );
+  const featuredProjects = useMemo(
+    () => getFeaturedProjects(localizedProjects),
+    [localizedProjects]
+  );
+
   return (
     <main className="min-h-screen bg-[#111] text-paper">
       <Navbar />
@@ -75,45 +122,40 @@ export default function HomePage() {
           className="relative z-10 max-w-4xl"
         >
           <motion.p variants={itemVariants} className="section-tag mb-4">
-            Portafolio Profesional
+            {hero.tag ?? ''}
           </motion.p>
 
           <motion.h1
             variants={itemVariants}
             className="font-serif text-5xl md:text-7xl leading-[1.05] mb-6"
-          >
-            Ingeniería aplicada que <br />
-            <span className="text-accent italic">transforma</span> procesos.
-          </motion.h1>
+            dangerouslySetInnerHTML={{ __html: hero.title ?? '' }}
+          />
 
           <motion.p
             variants={itemVariants}
             className="text-faint text-lg md:text-xl max-w-xl leading-relaxed mb-10"
-          >
-            Jefe Sector Mantenimiento Mecánico Envasado en <strong className="text-paper/80">Bagley Argentina · Grupo Arcor</strong>.
-            16 personas, maquinaria de alta velocidad, automatización y desarrollo.
-            Siempre orientado hacia la <strong className="text-accent">ingeniería aplicada para resolver problemas </strong>.
-          </motion.p>
+            dangerouslySetInnerHTML={{ __html: hero.description ?? '' }}
+          />
 
           <motion.div variants={itemVariants} className="flex gap-4 flex-wrap">
             <Link
               href="/proyectos"
               className="flex items-center gap-2 bg-accent text-paper px-7 py-3.5 text-sm font-medium tracking-wide hover:bg-accent/90 transition-colors"
             >
-              Ver proyectos <ArrowRight className="w-4 h-4" />
+              {hero.viewProjects ?? ''} <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/cv"
               className="flex items-center gap-2 border border-paper/20 text-paper/70 px-7 py-3.5 text-sm font-medium tracking-wide hover:border-paper/50 hover:text-paper transition-colors"
             >
-              Currículum <ArrowRight className="w-4 h-4" />
+              {hero.viewCV ?? ''} <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="/Federico Conci.pdf"
+              href={cvFile}
               download
               className="flex items-center gap-2 border border-accent/40 text-accent px-7 py-3.5 text-sm font-medium tracking-wide hover:border-accent hover:bg-accent/5 transition-colors"
             >
-              Descargar CV <Download className="w-4 h-4" />
+              {hero.downloadCV ?? ''} <Download className="w-4 h-4" />
             </a>
           </motion.div>
         </motion.div>
@@ -125,7 +167,7 @@ export default function HomePage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
         >
-          <span>scroll</span>
+          <span>{hero.scroll ?? ''}</span>
           <motion.div animate={{ y: [0,5,0] }} transition={{ duration: 1.5, repeat: Infinity }}>
             <ChevronDown className="w-4 h-4" />
           </motion.div>
@@ -133,13 +175,17 @@ export default function HomePage() {
       </section>
 
       {/* ── KPI STRIP ────────────────────────────────────────────── */}
-      <section className="border-t border-paper/10 border-b border-paper/10 py-10 px-8 md:px-20">
+      <section className="border-t border-b border-paper/10 py-10 px-8 md:px-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { num: 16,  suffix: '',  label: 'Personas lideradas' },
-            { num: 3,   suffix: '',  label: 'Upgrades final de línea' },
-            { num: 18,   suffix: '+', label: 'Años de experiencia' },
-            { num: 100, suffix: '%', label: 'Ciclo de productos' },
+            { num: 16,  suffix: '',  label: tKpi('people') },
+            { num: 3,   suffix: '',  label: tKpi('upgrades') },
+            { num: 18,   suffix: '+', label: tKpi('experience') },
+            { num: 16,  suffix: '+', label: tKpi('projects') },
+            { num: 30,  suffix: '+', label: tKpi('mounted') },
+            { num: 2,   suffix: '',  label: tKpi('conicet') },
+            { num: 3,   suffix: '',  label: tKpi('cncBuilt') },
+            { num: 12,  suffix: '+', label: tKpi('awards') },
           ].map((k) => (
             <div key={k.label} className="text-center">
               <div className="font-serif text-4xl text-accent mb-1">
@@ -155,21 +201,19 @@ export default function HomePage() {
       <section className="py-24 px-8 md:px-20">
         <div className="flex items-end justify-between mb-14">
           <div>
-            <p className="section-tag mb-3">Proyectos destacados</p>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-              Lo que construí<br /> con pasión genuina por la industria y la ingeniería.
-            </h2>
+            <p className="section-tag mb-3">{projects.tag ?? ''}</p>
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight" dangerouslySetInnerHTML={{ __html: projects.title ?? '' }} />
           </div>
           <Link
             href="/proyectos"
             className="hidden md:flex items-center gap-2 text-sm text-faint hover:text-paper transition-colors"
           >
-            Ver todos <ArrowRight className="w-4 h-4" />
+            {projects.viewAll ?? ''} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.slice(0, 6).map((p, i) => (
+          {featuredProjects.map((p, i) => (
             <ProjectCard key={p.id} project={p} index={i} />
           ))}
         </div>
@@ -179,49 +223,39 @@ export default function HomePage() {
       <section className="border-t border-paper/10 py-24 px-8 md:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-5xl">
           <div>
-            <p className="section-tag mb-4">Sobre mí</p>
-            <h2 className="font-serif text-3xl md:text-4xl mb-6 leading-tight">
-              Técnico, gestor<br />y constructor de soluciones.
-            </h2>
-            <p className="text-faint leading-relaxed mb-4">
-              Trabajo en el cruce entre la mecánica de precisión, la automatización y el desarrollo
-              de software. Lidero el mantenimiento de líneas de envasado de alta velocidad mientras
-              diseño piezas en 3D, escribo algoritmos para ser implementados en PLCs y aprendo Next.js en mi tiempo libre.
-            </p>
-            <p className="text-faint leading-relaxed">
-              Mi objetivo: aportar esa visión integral al equipo de <strong className="text-paper/80">
-              desarrollo de nuevos métodos y tecnologías de </strong> de Bagley, donde cada mejora impacta en millones
-              de envases que llegan a las góndolas de Argentina.
-            </p>
+            <p className="section-tag mb-4">{about.tag ?? ''}</p>
+            <h2 className="font-serif text-3xl md:text-4xl mb-6 leading-tight" dangerouslySetInnerHTML={{ __html: about.title ?? '' }} />
+            <p className="text-faint leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: about.description1 ?? '' }} />
+            <p className="text-faint leading-relaxed" dangerouslySetInnerHTML={{ __html: about.description2 ?? '' }} />
           </div>
 
           {/* Skills visual */}
           <div className="grid grid-cols-1 gap-6">
   {[
     { 
-      label: 'Ingeniería de Mantenimiento & Fiabilidad', 
-      level: 'Experto', 
-      detail: 'Ciclo completo en maquinaria de alta velocidad y taller central.' 
+      label: tSkills('maintenance'), 
+      level: tSkills('maintenanceLevel'), 
+      detail: tSkills('maintenanceDetail') 
     },
     { 
-      label: 'Gestión de Proyectos & Equipos', 
-      level: 'Senior', 
-      detail: 'Liderazgo de 16+ personas y operaciones de upgrade (GTP).' 
+      label: tSkills('projects'), 
+      level: tSkills('projectsLevel'), 
+      detail: tSkills('projectsDetail') 
     },
     { 
-      label: 'Automatización & Control Industrial', 
-      level: 'Avanzado', 
-      detail: 'Algoritmos PLC/HMI y visión computarizada con OpenCV.' 
+      label: tSkills('automation'), 
+      level: tSkills('automationLevel'), 
+      detail: tSkills('automationDetail') 
     },
     { 
-      label: 'Prototipado Rápido & Manufactura Aditiva', 
-      level: 'Avanzado', 
-      detail: 'Validación de mejoras funcionales mediante impresión 3D FDM.' 
+      label: tSkills('prototyping'), 
+      level: tSkills('prototypingLevel'), 
+      detail: tSkills('prototypingDetail') 
     },
     { 
-      label: 'Ecosistemas Digitales (Next.js / Web)', 
-      level: 'Enfoque Proyectos', 
-      detail: 'Desarrollo de interfaces para gestión y visualización de datos técnicos.' 
+      label: tSkills('web'), 
+      level: tSkills('webLevel'), 
+      detail: tSkills('webDetail') 
     },
   ].map((s, i) => (
     <motion.div 
@@ -253,12 +287,12 @@ export default function HomePage() {
       <footer className="border-t border-paper/10 py-8 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-4">
         <span className="font-serif text-xl text-accent">Federico S. Conci</span>
         <p className="text-faint text-xs text-center">
-          Córdoba, Argentina
+          {tFooter('location')}
         </p>
         <div className="flex gap-6 text-xs text-faint">
-          <Link href="/cv" className="hover:text-paper transition-colors">CV</Link>
-          <Link href="/proyectos" className="hover:text-paper transition-colors">Proyectos</Link>
-          <a href="mailto:concifederico@gmail.com" className="hover:text-paper transition-colors">Contacto</a>
+          <Link href="/cv" className="hover:text-paper transition-colors">{tFooter('cv')}</Link>
+          <Link href="/proyectos" className="hover:text-paper transition-colors">{tFooter('projects')}</Link>
+          <a href="mailto:concifederico@gmail.com" className="hover:text-paper transition-colors">{tFooter('contact')}</a>
         </div>
       </footer>
     </main>

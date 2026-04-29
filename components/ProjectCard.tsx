@@ -74,7 +74,7 @@ export default function ProjectCard({ project, index }: Props) {
       <div className="relative w-full h-48 overflow-hidden bg-paper/5 border-b border-paper/10">
         <Image
           src={imageList[currentImage]}
-          alt={project.title}
+          alt={project.title || 'Project image'}
           fill
           className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105 opacity-80 group-hover:opacity-100"
           sizes="(max-width: 768px) 100vw, 33vw"
@@ -130,12 +130,12 @@ export default function ProjectCard({ project, index }: Props) {
         </div>
 
         {/* Título y subtítulo */}
-        <h3 className="font-serif text-lg text-paper mb-1 leading-tight">{project.title}</h3>
-        <p className="text-accent text-xs mb-3 tracking-wide uppercase font-medium">{project.subtitle}</p>
+        <h3 className="font-serif text-lg text-paper mb-1 leading-tight">{project.title || 'Sin título'}</h3>
+        <p className="text-accent text-xs mb-3 tracking-wide uppercase font-medium">{project.subtitle || ''}</p>
 
         {/* Descripción */}
         <p className="text-faint text-sm leading-relaxed mb-4 line-clamp-3">
-          {project.description}
+          {project.description || ''}
         </p>
 
         {/* KPIs */}
@@ -151,13 +151,15 @@ export default function ProjectCard({ project, index }: Props) {
         )}
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tags.map((t) => (
-            <span key={t} className="text-[10px] px-2 py-0.5 border border-paper/15 text-faint/80 rounded-sm bg-paper/5">
-              {t}
-            </span>
-          ))}
-        </div>
+        {project.tags && project.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tags.map((t) => (
+              <span key={t} className="text-[10px] px-2 py-0.5 border border-paper/15 text-faint/80 rounded-sm bg-paper/5">
+                {t}
+              </span>
+            ))}
+          </div>
+        )}
 
         {/* Enlaces opcionales */}
         {project.links && project.links.length > 0 && (

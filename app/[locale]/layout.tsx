@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { DM_Serif_Display, DM_Sans } from 'next/font/google';
-import '../styles/globals.css';
-import { Analytics } from '@vercel/analytics/next'
+import '../../styles/globals.css';
+import { Analytics } from '@vercel/analytics/next';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
 const dmSerif = DM_Serif_Display({
   subsets: ['latin'],
@@ -28,11 +30,21 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+  params: { locale }
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
+  const messages = await getMessages();
+
   return (
-    <html lang="es" className={`${dmSerif.variable} ${dmSans.variable}`}>
+    <html lang={locale} className={`${dmSerif.variable} ${dmSans.variable}`}>
       <body>
-        {children}
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
         <Analytics />
       </body>
     </html>
