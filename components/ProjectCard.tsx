@@ -140,11 +140,13 @@ export default function ProjectCard({ project, index }: Props) {
 
         {/* KPIs */}
         {project.kpis && (
-          <div className="flex gap-6 mb-6 border-y border-paper/5 py-3">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-6 border-y border-paper/5 py-3">
             {project.kpis.map((k) => (
-              <div key={k.label}>
-                <div className="font-serif text-xl text-paper/90">{k.value}</div>
-                <div className="text-accent/60 text-[9px] uppercase tracking-widest font-bold">{k.label}</div>
+              <div key={k.label} className="min-w-0">
+                <div className="font-serif text-xl text-paper/90 break-words">{k.value}</div>
+                <div className="text-accent/60 text-[9px] uppercase tracking-[0.12em] font-bold break-words">
+                  {k.label}
+                </div>
               </div>
             ))}
           </div>

@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link, useRouter, usePathname } from '@/i18n/routing';
 
@@ -9,7 +8,6 @@ export default function Navbar() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleLanguage = () => {
     const nextLocale = locale === 'en' ? 'es' : 'en';
@@ -23,6 +21,12 @@ export default function Navbar() {
           <Link href="/" className="font-serif text-xl text-accent">
             Federico S. Conci
           </Link>
+          <button
+            onClick={toggleLanguage}
+            className="md:hidden text-xs text-accent border border-accent/30 px-3 py-1 rounded hover:bg-accent/10 transition-colors"
+          >
+            {locale === 'en' ? t('spanish') : t('english')}
+          </button>
           <div className="hidden md:flex items-center gap-8">
             <Link href="/proyectos" className="text-sm text-paper/70 hover:text-paper transition-colors">
               {t('projects')}
@@ -37,7 +41,6 @@ export default function Navbar() {
               {locale === 'en' ? t('spanish') : t('english')}
             </button>
           </div>
-          {/* ... botón mobile ... */}
         </div>
       </div>
     </nav>
